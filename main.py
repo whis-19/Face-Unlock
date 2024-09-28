@@ -1,14 +1,25 @@
-from Func import *
+from faceCapture import *
+from trainModel import *
+from faceUnlock import *
 
 # Main
 if __name__ == "__main__":
-    print("1. Register Face")
-    print("2. Start Face Lock")
-    choice = input("Choose an option (1/2): ")
+    print("Instructions")
+    ch = input("Enter 1 to capture faces, 2 to recognize faces: ")
+    
+    if ch == "1":
+        print("Enter the person's name:")
+        name = input()
+        
+     
+        capture_faces(name)
+        print("Training KNN classifier...")
+        train_model("TestCases", model_save_path="trained_knn_model.clf", n_neighbors=2)
+        
+    elif ch == "2":
 
-    if choice == '1':
-        runInThread(register_face)
-    elif choice == '2':
-        runInThread(face_lock)
+        recognize_faces()
+        
     else:
-        print("Invalid choice")
+        print("Wrong choice.\nTerminating")
+        exit()
