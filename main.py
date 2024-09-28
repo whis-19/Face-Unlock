@@ -10,8 +10,11 @@ if __name__ == "__main__":
     if ch == "1":
         print("Enter the person's name:")
         name = input()
-        
-     
+    
+
+
+
+    
         capture_faces(name)
         print("Training KNN classifier...")
         train_model("TestCases", model_save_path="trained_knn_model.clf", n_neighbors=2)
