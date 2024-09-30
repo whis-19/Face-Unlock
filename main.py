@@ -4,7 +4,7 @@ from faceUnlock import *
 
 # Main
 if __name__ == "__main__":
-    print("Instructions")
+    print("Instructions")                                           
     ch = input("Enter 1 to capture faces, 2 to recognize faces: ")
     
     if ch == "1":

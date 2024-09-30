@@ -1,4 +1,5 @@
 from Threading import *
+
 def train_model(train_dir, model_save_path=None, n_neighbors=2, knn_algo='ball_tree', verbose=False):
     encodings = []
     names = []
